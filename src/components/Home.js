@@ -1,15 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  //useState changes state
   const [name, setName] = useState("Josef");
   const [age, setAge] = useState(30);
-  // let name = "Josef";
 
   const handleClick = () => {
     setName("John");
     setAge(31);
   };
+
+  //useEffect runs for every render
+  useEffect(() => {
+    console.log("use effect ran");
+  });
 
   return (
     <div>
