@@ -1,28 +1,24 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import TodoList from "./TodoList";
 const Home = () => {
-  //useState changes state
-  const [name, setName] = useState("Josef");
-  const [age, setAge] = useState(30);
+  const [todos, setTodos] = useState(null);
 
-  const handleClick = () => {
-    setName("John");
-    setAge(31);
-  };
-
-  //useEffect runs for every render
   useEffect(() => {
-    console.log("use effect ran");
-  });
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setTodos(data);
+      });
+  }, []);
 
   return (
     <div>
       <h2>Homepage</h2>
-      <p>
-        {name} is {age} years old
-      </p>
-      <button onClick={handleClick}>Click me</button>
+      {todos && <TodoList todos={todos} />}
     </div>
   );
 };
