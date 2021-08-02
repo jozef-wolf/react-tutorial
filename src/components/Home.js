@@ -8,6 +8,9 @@ const Home = () => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
+        if (!res.ok) {
+          throw Error("could not fetch the data for that resource");
+        }
         return res.json();
       })
       .then((data) => {
