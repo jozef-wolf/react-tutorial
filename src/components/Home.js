@@ -11,9 +11,11 @@ const Home = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setTodos(data);
         setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   }, []);
 
