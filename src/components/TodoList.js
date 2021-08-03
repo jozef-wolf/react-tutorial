@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TodoList = ({ todos }) => {
   return (
     <div>
       {todos.map((todo) => (
         <div key={todo.id}>
-          <div>
-            <strong>{todo.title}</strong>
-          </div>
-          <div>{todo.body}</div>
+          <Link to={`/todos/${todo.id}`}>
+            <h2>{todo.title}</h2>
+            <p>{todo.body}</p>
+          </Link>
         </div>
       ))}
     </div>
