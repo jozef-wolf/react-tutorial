@@ -4,19 +4,36 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("User");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSumbit = (e) => {
+    e.preventDefault();
+    const todo = { title, body, author };
+    setIsLoading(true);
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(todo),
+    }).then(() => {
+      console.log("new todo added");
+      setIsLoading(false);
+    });
+  };
+
   return (
     <div className="create">
       <h2>Add a New Todo</h2>
-      <form>
+      <form onSubmit={handleSumbit}>
         <label>Todo Title:</label>
         <input
           type="text"
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-        ></input>
-      </form>
-      <form>
+        />
         <label>Todo Body:</label>
         <textarea
           required
@@ -28,7 +45,8 @@ const Create = () => {
           <option value="User">User</option>
           <option value="Anonymous">Anonymous</option>
         </select>
-        <button>Add todo</button>
+        {!isLoading && <button>Add todo</button>}
+        {isLoading && <button disabled>Adding todo...</button>}
         <p>{title}</p>
         <p>{body}</p>
         <p>{author}</p>
