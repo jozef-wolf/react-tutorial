@@ -1,16 +1,22 @@
 {
   "blogs": [
     {
-      "title": "My first Blog",
-      "body": "Why do we use it? ",
-      "author": "User",
-      "id": 1
-    },
-    {
       "title": "Opening Party",
       "body": "Why do we use it? What is it?",
       "author": "Anonymous",
       "id": 2
+    },
+    {
+      "title": "asdf",
+      "body": "asdf",
+      "author": "mario",
+      "id": 4
+    },
+    {
+      "title": "asdfasdf",
+      "body": "aasdfasdf",
+      "author": "mario",
+      "id": 5
     }
   ]
 }
