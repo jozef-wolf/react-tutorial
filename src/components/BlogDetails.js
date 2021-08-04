@@ -5,19 +5,19 @@ import useFetch from "./useFetch";
 const TodoDetails = () => {
   const { id } = useParams();
   const {
-    data: todo,
+    data: blog,
     error,
     isLoading,
-  } = useFetch("https://jsonplaceholder.typicode.com/posts/" + id);
+  } = useFetch("http://localhost:8000/blogs" + id);
 
   return (
     <div className="todos-details">
       {isLoading && <div>Loading...</div>}
       {error && <div>{error}</div>}
-      {todo && (
+      {blog && (
         <article>
-          <h2>{todo.title}</h2>
-          <p>{todo.body}</p>
+          <h2>{blog.title}</h2>
+          <p>{blog.body}</p>
         </article>
       )}
     </div>

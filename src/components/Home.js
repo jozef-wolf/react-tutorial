@@ -1,20 +1,20 @@
 import React from "react";
-import TodoList from "./TodoList";
+import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
   const {
-    data: todos,
+    data: blogs,
     isLoading,
     error,
-  } = useFetch("https://jsonplaceholder.typicode.com/posts");
+  } = useFetch("http://localhost:8000/blogs");
 
   return (
     <div>
       <h2>Homepage</h2>
       {error && <div>{error}</div>}
       {isLoading && <div>Loading...</div>}
-      {todos && <TodoList todos={todos} />}
+      {blogs && <BlogList blogs={blogs} />}
     </div>
   );
 };

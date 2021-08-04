@@ -8,7 +8,7 @@ const Create = () => {
 
   const handleSumbit = (e) => {
     e.preventDefault();
-    const todo = { title, body, author };
+    const blog = { title, body, author };
     setIsLoading(true);
 
     fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -16,7 +16,7 @@ const Create = () => {
       header: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(todo),
+      body: JSON.stringify(blog),
     }).then(() => {
       console.log("new todo added");
       setIsLoading(false);
