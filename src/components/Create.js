@@ -3,22 +3,21 @@ import React, { useState } from "react";
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [author, setAuthor] = useState("User");
+  const [author, setAuthor] = useState("mario");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSumbit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { title, body, author };
+
     setIsLoading(true);
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+    fetch("http://localhost:8000/blogs/", {
       method: "POST",
-      header: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(blog),
     }).then(() => {
-      console.log("new todo added");
+      console.log("new blog added");
       setIsLoading(false);
     });
   };
@@ -26,7 +25,7 @@ const Create = () => {
   return (
     <div className="create">
       <h2>Add a New Todo</h2>
-      <form onSubmit={handleSumbit}>
+      <form onSubmit={handleSubmit}>
         <label>Todo Title:</label>
         <input
           type="text"
