@@ -27,16 +27,16 @@ const Create = () => {
 
   return (
     <div className="create">
-      <h2>Add a New Todo</h2>
+      <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
-        <label>Todo Title:</label>
+        <label>Blog Title:</label>
         <input
           type="text"
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label>Todo Body:</label>
+        <label>Blog Body:</label>
         <textarea
           required
           value={body}
@@ -47,8 +47,8 @@ const Create = () => {
           <option value="User">User</option>
           <option value="Anonymous">Anonymous</option>
         </select>
-        {!isLoading && <button>Add todo</button>}
-        {isLoading && <button disabled>Adding todo...</button>}
+        {!isLoading && <button>Add Blog</button>}
+        {isLoading && <button disabled>Adding Blog...</button>}
         <p>{title}</p>
         <p>{body}</p>
         <p>{author}</p>
