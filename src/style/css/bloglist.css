@@ -1,0 +1,14 @@
+.bloglist {
+  color: black;
+}
+.bloglist div {
+  border: 1px solid black;
+}
+.bloglist div a {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=bloglist.css.map */

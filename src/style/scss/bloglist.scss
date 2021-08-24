@@ -1,0 +1,12 @@
+.bloglist {
+  color: black;
+  div {
+    border: 1px solid black;
+    a {
+      display: flex;
+      flex-direction: column;
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
