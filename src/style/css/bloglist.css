@@ -2,11 +2,16 @@
   color: black;
 }
 .bloglist div {
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
 .bloglist div a {
   display: flex;
+  align-items: center;
   flex-direction: column;
+  margin: 1%;
+  border: 1px solid black;
+  width: 50%;
   color: black;
   text-decoration: none;
 }
