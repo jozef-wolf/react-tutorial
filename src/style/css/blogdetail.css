@@ -2,17 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 10% 0 10% 0;
-  border: 1px solid black;
+  flex-direction: column;
+  margin-top: 100px;
 }
-.blog-details button {
-  background-color: #c7c7c7;
+.blog-details div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 10% 0 10% 0;
+  background-color: #ebebeb;
+}
+.blog-details div button {
+  background-color: #6e6e6e;
   border: none;
   height: 30px;
   width: 50px;
 }
-.blog-details button:hover {
+.blog-details div button:hover {
   background-color: black;
   color: white;
 }
